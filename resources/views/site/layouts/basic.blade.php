@@ -7,6 +7,7 @@
     <title>@yield('title')</title>
 </head>
 <body>
-@yield('content'); 
+@include('site.layouts._partials.nav')
+@yield('content')
 </body>
 </html>
