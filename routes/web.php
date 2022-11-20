@@ -13,10 +13,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-/*Route::get('/', function () {
-    return view('welcome');
-});*/
-
-Route::get('/', function (){
-    return view("site.home");
-});
+Route::get('/', [App\Http\Controllers\HomeController::class, 'home'])->name('site.home');
