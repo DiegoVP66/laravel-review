@@ -14,3 +14,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'home'])->name('site.home');
+Route::post('/', [App\Http\Controllers\HomeController::class, 'home'])->name('site.home');
