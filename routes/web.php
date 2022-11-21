@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'home'])->name('site.home');
 Route::post('/', [App\Http\Controllers\HomeController::class, 'home'])->name('site.home');
+Route::get('/about', [App\Http\Controllers\AboutController::class, 'about'])->name('site.about');
 
 Route::fallback(function(){
     return redirect()->route('site.home');
