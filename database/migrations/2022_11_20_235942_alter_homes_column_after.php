@@ -13,9 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        /*Schema::table('homes',function(Blueprint $table){
-            $table->integer('age');
-        });*/
+        Schema::table('homes',function(Blueprint $table){
+            $table->integer('age')->after('name')->nullable();
+        });
     }
 
     /**
@@ -25,8 +25,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('homes',function(Blueprint $table){
-            $table->dropColumn('age');
-        });
+        //
     }
 };
