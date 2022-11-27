@@ -6,7 +6,7 @@
     <h1> Hello World! </h1>
 </div>
 <div>
-        @component('site.layouts._components.form')
+        @component('site.layouts._components.form', ['options' => $options])
         @endcomponent
     </div>
 
