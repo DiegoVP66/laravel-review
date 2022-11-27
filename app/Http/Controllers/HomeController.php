@@ -12,15 +12,26 @@ class HomeController extends Controller
         echo '</pre>';
         echo $request->input('name');
         */
-        
-        $person = new Home();
-        
-            $person->name = $request->input('name');
-            $person->age = $request->input('age');     
-        
-        print_r($person->getAttributes());
-       
+
+        // $person = new Home();
+
+        //     $person->name = $request->input('name');
+        //     $person->age = $request->input('age');
+
+        // print_r($person->getAttributes());
+
        return view('site.home', ['title' => 'Home Test']);
-       
+
+    }
+
+    public function save(Request $request){
+        //Home::create($request->all());
+
+        $request->validate([
+            'name'=> 'required',
+            'age'=> 'required',
+            'email' => 'required',
+            'message'=>'required'
+        ]);
     }
 }
