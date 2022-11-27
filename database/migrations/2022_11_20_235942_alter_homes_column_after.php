@@ -16,7 +16,8 @@ return new class extends Migration
         Schema::table('home',function(Blueprint $table){
             $table->integer('age')->after('name');
             $table->string('email')->after('age');
-            $table->string('message')->after('email');
+            $table->string('options')->after('age');
+            $table->string('message')->after('options');
         });
     }
 

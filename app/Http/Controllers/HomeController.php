@@ -28,10 +28,11 @@ class HomeController extends Controller
         //Home::create($request->all());
 
         $request->validate([
-            'name'=> 'required',
+            'name'=> 'required|min:3|max:40',
             'age'=> 'required',
             'email' => 'required',
-            'message'=>'required'
+            'options'=>'required',
+            'message'=>'required|max:2000'
         ]);
     }
 }
