@@ -8,7 +8,7 @@
         <option value="">Motivo do contato</option>
 
         @foreach ($options as $key => $option)
-            <option value="{{ $key }}" {{ old('options') == $key ? 'selected' : '' }}>{{ $option }}
+            <option value="{{ $option->id }}" {{ old('options') == $option->id ? 'selected' : '' }}>{{ $option->options }}
             </option>
         @endforeach
 

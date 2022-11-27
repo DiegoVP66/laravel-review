@@ -4,16 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Home;
+use App\Models\Options;
 class HomeController extends Controller
 {
     public function home(Request $request){
 
-        $options = [
-            '1' => 'Dúvida',
-            '2' => 'Elogio'
-        ];
+        $options = Options::all();
+        return view('site.home', ['title' => 'Home', 'options'=> $options]);
 
-       return view('site.home', ['title' => 'Home', 'options'=> $options]);
 
     }
 

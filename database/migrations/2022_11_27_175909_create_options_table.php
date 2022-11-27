@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use App\Models\Options;
 
 return new class extends Migration
 {
@@ -13,11 +14,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('home',function(Blueprint $table){
-            $table->integer('age')->after('name');
-            $table->string('email')->after('age');
-            $table->string('message')->after('email');
+        Schema::create('options', function (Blueprint $table) {
+            $table->id();
+            $table->string('options', 20);
+            $table->timestamps();
         });
+
+
+        // Options::create(['Dúvida']);
+        // Options::create(['Elogio']);
     }
 
     /**
@@ -27,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('home');
+        Schema::drop('options');
     }
 };
